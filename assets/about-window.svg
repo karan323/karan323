@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="900" height="300" viewBox="0 0 900 300" role="img" aria-labelledby="t d">
+  <title id="t">ABOUT_ME.TXT</title>
+  <desc id="d">A classic grey desktop window titled ABOUT_ME.TXT. Karan Mistry is a Biomedical Engineering Technologist and Clinical Technical Specialist with 5+ years in hospital clinical engineering, surgical navigation and OR support across Canada and India, currently in clinical applications for cranial, spine and ENT navigation, based in Toronto.</desc>
+  <style>
+    .ui   { font-family: Tahoma, 'MS Sans Serif', Verdana, sans-serif; }
+    .mono { font-family: 'Courier New', Courier, monospace; }
+    .k { fill: #000080; font-weight: 700; }
+    .v { fill: #111; }
+  </style>
+
+  <!-- outer raised window -->
+  <rect x="0" y="0" width="900" height="300" fill="#c0c0c0"/>
+  <path d="M0 300 V0 H900" fill="none" stroke="#ffffff" stroke-width="3"/>
+  <path d="M0 300 H900 V0" fill="none" stroke="#404040" stroke-width="3"/>
+
+  <!-- title bar -->
+  <defs>
+    <linearGradient id="tb" x1="0" x2="1">
+      <stop offset="0" stop-color="#000080"/><stop offset="1" stop-color="#1084d0"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="6" width="888" height="28" fill="url(#tb)"/>
+  <rect x="14" y="13" width="14" height="14" fill="#ffffff"/><rect x="16" y="15" width="10" height="2" fill="#000080"/>
+  <rect x="16" y="19" width="8" height="1.5" fill="#000080"/><rect x="16" y="22" width="9" height="1.5" fill="#000080"/>
+  <text class="ui" x="36" y="25" font-size="15" font-weight="700" fill="#ffffff">ABOUT_ME.TXT - Notepad</text>
+  <!-- window buttons -->
+  <g class="ui" font-size="13" font-weight="700" text-anchor="middle">
+    <g transform="translate(818 10)"><rect width="22" height="20" fill="#c0c0c0" stroke="#404040"/><path d="M1 19V1H21" stroke="#fff" fill="none"/><rect x="6" y="13" width="9" height="2" fill="#000"/></g>
+    <g transform="translate(842 10)"><rect width="22" height="20" fill="#c0c0c0" stroke="#404040"/><path d="M1 19V1H21" stroke="#fff" fill="none"/><rect x="5" y="4" width="12" height="10" fill="none" stroke="#000" stroke-width="1.5"/><rect x="5" y="4" width="12" height="2.5" fill="#000"/></g>
+    <g transform="translate(868 10)"><rect width="22" height="20" fill="#c0c0c0" stroke="#404040"/><path d="M1 19V1H21" stroke="#fff" fill="none"/><path d="M6 5L16 15M16 5L6 15" stroke="#000" stroke-width="2"/></g>
+  </g>
+
+  <!-- menu bar -->
+  <g class="ui" font-size="14" fill="#000">
+    <text x="16" y="56"><tspan text-decoration="underline">F</tspan>ile</text>
+    <text x="56" y="56"><tspan text-decoration="underline">E</tspan>dit</text>
+    <text x="98" y="56">F<tspan text-decoration="underline">o</tspan>rmat</text>
+    <text x="158" y="56"><tspan text-decoration="underline">H</tspan>elp</text>
+  </g>
+
+  <!-- sunken text area -->
+  <rect x="10" y="66" width="880" height="224" fill="#ffffff"/>
+  <path d="M10 290 V66 H890" fill="none" stroke="#808080" stroke-width="2"/>
+  <path d="M10 290 H890 V66" fill="none" stroke="#ffffff" stroke-width="2"/>
+
+  <g class="mono" font-size="16">
+    <text x="28" y="96"><tspan class="k">NAME      :</tspan><tspan class="v"> Karan Mistry</tspan></text>
+    <text x="28" y="122"><tspan class="k">ROLE      :</tspan><tspan class="v"> Biomedical Engineering Technologist / Clinical Technical Specialist</tspan></text>
+    <text x="28" y="148"><tspan class="k">BASE      :</tspan><tspan class="v"> Toronto, Canada  (originally Ahmedabad, India)</tspan></text>
+    <text x="28" y="174"><tspan class="k">XP        :</tspan><tspan class="v"> 5+ yrs  hospital clinical engineering + OR support</tspan></text>
+    <text x="28" y="200"><tspan class="k">NOW       :</tspan><tspan class="v"> Clinical applications specialist, surgical</tspan></text>
+    <text x="148" y="226" class="v">navigation systems for cranial / spine / ENT</text>
+    <text x="28" y="252"><tspan class="k">INTERESTS :</tspan><tspan class="v"> Medical imaging, DICOM, CT-based navigation, Python</tspan></text>
+    <text x="28" y="278" fill="#808080">; EOF -- press any key to continue_</text>
+  </g>
+</svg>

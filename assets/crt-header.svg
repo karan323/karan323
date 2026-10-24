@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="370" viewBox="0 0 900 370" role="img" aria-labelledby="t d">
+  <title id="t">KARAN-OS boot screen</title>
+  <desc id="d">A retro beige CRT monitor boots up and types out: Karan Mistry, Biomedical Engineering Technologist, surgical navigation, OR clinical support and medical imaging.</desc>
+  <defs>
+    <filter id="glow" x="-10%" y="-30%" width="120%" height="160%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="bigglow" x="-10%" y="-40%" width="120%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="#000" opacity="0.28"/>
+    </pattern>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="60%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.75"/>
+    </radialGradient>
+    <linearGradient id="band" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#33ff66" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#33ff66" stop-opacity="0.07"/>
+      <stop offset="1" stop-color="#33ff66" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="bezel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e3dac2"/>
+      <stop offset="1" stop-color="#bfb497"/>
+    </linearGradient>
+    <clipPath id="screenClip"><rect x="34" y="28" width="832" height="282" rx="20"/></clipPath>
+  </defs>
+
+  <style>
+    .mono { font-family: 'Courier New', Courier, 'Lucida Console', monospace; }
+    .dim  { fill: #2fbf55; font-size: 15px; }
+    .txt  { fill: #8dffb0; font-size: 16px; }
+    .name { fill: #33ff66; font-size: 54px; font-weight: 700; letter-spacing: 6px; }
+    .amb  { fill: #ffb000; }
+    .ln   { opacity: 0; animation: show 0.01s linear forwards; }
+    .l1 { animation-delay: 0.3s; }  .l2 { animation-delay: 0.9s; }
+    .l3 { animation-delay: 1.5s; }  .l4 { animation-delay: 2.8s; }
+    .l5 { animation-delay: 4.5s; }  .l6 { animation-delay: 5.0s; }
+    .l7 { animation-delay: 5.6s; }
+    .bar   { transform-box: fill-box; transform-origin: left center; transform: scaleX(0);
+             animation: fill 1.1s steps(10) 1.7s forwards; }
+    .cover { animation: type 1.3s steps(12) 3.1s forwards; }
+    .cursor{ opacity: 0; animation: blink 1s steps(1) 5.6s infinite; }
+    .screen{ animation: flicker 4s linear infinite; }
+    .sweep { animation: sweep 6s linear infinite; }
+    .led   { animation: led 2.4s ease-in-out infinite; }
+    @keyframes show   { to { opacity: 1; } }
+    @keyframes fill   { to { transform: scaleX(1); } }
+    @keyframes type   { to { transform: translateX(560px); } }
+    @keyframes blink  { 0% { opacity: 1; } 50% { opacity: 0; } }
+    @keyframes flicker{ 0%,100% { opacity: 1; } 48% { opacity: 1; } 50% { opacity: 0.94; } 52% { opacity: 1; } }
+    @keyframes sweep  { from { transform: translateY(-90px); } to { transform: translateY(330px); } }
+    @keyframes led    { 0%,100% { opacity: 1; } 50% { opacity: 0.45; } }
+    @media (prefers-reduced-motion: reduce) {
+      .ln, .cursor { opacity: 1; animation: none; }
+      .bar { transform: scaleX(1); animation: none; }
+      .cover { transform: translateX(560px); animation: none; }
+      .screen, .sweep, .led { animation: none; }
+    }
+  </style>
+
+  <!-- Monitor bezel -->
+  <rect x="2" y="2" width="896" height="366" rx="26" fill="url(#bezel)" stroke="#9c9177" stroke-width="3"/>
+  <rect x="24" y="18" width="852" height="302" rx="26" fill="#2b2a24"/>
+
+  <!-- Screen -->
+  <g clip-path="url(#screenClip)">
+    <rect x="34" y="28" width="832" height="282" fill="#051005"/>
+    <g class="screen mono">
+      <text class="dim ln l1" x="62" y="62">KARAN-OS BIOS v4.86  (C) BIOMED SYSTEMS INC.</text>
+      <text class="dim ln l2" x="62" y="86">MEMORY TEST ........ 640K OK   //   OR-READY ...... YES</text>
+      <g class="ln l3">
+        <text class="dim" x="62" y="110">LOADING PROFILE.DAT</text>
+        <rect x="248" y="97" width="204" height="16" fill="none" stroke="#2fbf55" stroke-width="1.5"/>
+        <rect class="bar" x="252" y="101" width="196" height="8" fill="#33ff66"/>
+      </g>
+      <text class="dim amb ln l4" x="466" y="110">100%</text>
+
+      <text class="name" x="60" y="178" filter="url(#bigglow)">KARAN MISTRY</text>
+      <rect class="cover" x="54" y="128" width="560" height="64" fill="#051005"/>
+
+      <g filter="url(#glow)">
+        <text class="txt ln l5" x="62" y="216"><tspan class="amb">&gt;</tspan> BIOMEDICAL ENGINEERING TECHNOLOGIST</text>
+        <text class="txt ln l6" x="62" y="242"><tspan class="amb">&gt;</tspan> SURGICAL NAVIGATION // OR CLINICAL SUPPORT // MED IMAGING</text>
+        <text class="txt ln l7" x="62" y="284">C:\KARAN&gt; run portfolio.exe</text>
+        <rect class="cursor" x="342" y="270" width="11" height="17" fill="#33ff66"/>
+      </g>
+    </g>
+    <rect class="sweep" x="34" y="28" width="832" height="70" fill="url(#band)"/>
+    <rect x="34" y="28" width="832" height="282" fill="url(#scan)"/>
+    <rect x="34" y="28" width="832" height="282" fill="url(#vignette)"/>
+  </g>
+
+  <!-- Bezel details -->
+  <text class="mono" x="44" y="350" font-size="13" font-weight="700" fill="#7d735c" letter-spacing="3">KARAN-PC 486 DX2</text>
+  <g fill="#a3987c">
+    <rect x="560" y="336" width="120" height="3" rx="1.5"/>
+    <rect x="560" y="344" width="120" height="3" rx="1.5"/>
+    <rect x="560" y="352" width="120" height="3" rx="1.5"/>
+  </g>
+  <circle cx="760" cy="344" r="9" fill="#9c9177"/>
+  <circle cx="790" cy="344" r="9" fill="#9c9177"/>
+  <circle class="led" cx="840" cy="344" r="5" fill="#33ff66"/>
+  <circle cx="840" cy="344" r="5" fill="none" stroke="#6b634f" stroke-width="1.5"/>
+</svg>
